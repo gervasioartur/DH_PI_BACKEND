@@ -12,8 +12,7 @@ const cors_origin = process.env.CORS_ORIGIN;
 const app = experss();
 app.use(experss.json());
 app.use(experss.static(path.resolve(__dirname, '..', 'public', 'images', 'products')));
-app.use(cors())
-app.use(cors({ credentials: true }));
+app.use(cors({ credentials: true, origin: cors_origin }));
 
 //importing routes
 const authRoutes = require('./routes/auth.routes');
@@ -24,7 +23,7 @@ const customerRoutes = require('./routes/customer.routes');
 
 // configuring roures
 app.get('/', (req, res) => {
-  res.send({ message: 'Olá seja bem vindo a api do projeto pi' })
+  res.send({message:'Olá seja bem vindo a api do projeto pi'})
 })
 app.use('/auth', authRoutes);
 app.use('/admins', adminRoutes);
