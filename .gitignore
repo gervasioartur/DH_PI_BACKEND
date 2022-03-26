@@ -1,0 +1,7 @@
+node_modules
+public/images/*
+!public/images/products
+!public/images/users
+.env
+.env.test
+
