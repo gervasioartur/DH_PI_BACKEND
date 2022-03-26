@@ -22,6 +22,9 @@ const categoryRoutes = require('./routes/category.routes');
 const customerRoutes = require('./routes/customer.routes');
 
 // configuring roures
+app.get('/', (req, res) => {
+  res.send({message:'Olá seja bem vindo a api do projeto pi'})
+})
 app.use('/auth', authRoutes);
 app.use('/admins', adminRoutes);
 app.use('/products', productRoutes);
