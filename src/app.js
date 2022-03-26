@@ -1,4 +1,5 @@
 require('dotenv/config');
+const path = require('path')
 require('dotenv').config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
 });
@@ -10,7 +11,7 @@ const cors_origin = process.env.CORS_ORIGIN;
 //
 const app = experss();
 app.use(experss.json());
-app.use(experss.static(__dirname + '../public'));
+app.use(experss.static(path.resolve(__dirname, '..', 'public', 'images', 'products')));
 app.use(cors({ credentials: true, origin: cors_origin }));
 
 //importing routes
