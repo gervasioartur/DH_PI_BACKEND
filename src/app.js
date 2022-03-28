@@ -12,7 +12,7 @@ const cors_origin = process.env.CORS_ORIGIN;
 const app = experss();
 app.use(experss.json());
 app.use(experss.static(path.resolve(__dirname, '..', 'public', 'images', 'products')));
-app.use(cors({ credentials: true, origin: 'https://dh-pi-frontend.herokuapp.com' }));
+app.use(cors());
 
 //importing routes
 const authRoutes = require('./routes/auth.routes');
