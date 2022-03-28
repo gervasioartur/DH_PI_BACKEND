@@ -12,6 +12,7 @@ const getToken = require('../helpers/get-token');
 
 module.exports = class AuthControllers {
   static async login(req, res) {
+    res.headers('Access-Control-Allow-Origin', "*")
     const { email, password } = req.body;
 
     const user = await User.findOne({
